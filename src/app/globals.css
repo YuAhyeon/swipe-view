@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tailwindcss/utilities";
+
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
@@ -20,6 +22,21 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
 }
 
 body {
