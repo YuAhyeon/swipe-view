@@ -1,10 +1,13 @@
 'use client';
-import { Nav } from '@/components/layout';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Nav } from '@/components/layout';
 import { CATEGORY } from '@/helper/constants';
+import { ThemeToggleButton } from '@/components/themes';
 
 export default function RootLayout({
   children,
@@ -17,6 +20,7 @@ export default function RootLayout({
 
   return (
     <div className="w-[100dvw] h-[100dvh] pt-[66px]">
+      <ThemeToggleButton />
       <Nav swiper={swiperInstance} activeIndex={activeIndex} />
       <Swiper
         onSwiper={setSwiperInstance}
@@ -32,9 +36,7 @@ export default function RootLayout({
         className="w-full h-full"
       >
         {CATEGORY.map(({ key }) => (
-          <SwiperSlide key={key}>
-            <div className="h-full">{children}</div>
-          </SwiperSlide>
+          <SwiperSlide key={key}>{children}</SwiperSlide>
         ))}
       </Swiper>
     </div>
