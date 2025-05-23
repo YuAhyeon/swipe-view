@@ -27,7 +27,7 @@ export default function ChatBannerItem(item: ChatBannerItemProps) {
       <div className="relative w-full h-[210px]">
         <Image
           src={src}
-          alt="user profile"
+          alt="배너 이미지"
           fill
           quality={75}
           priority

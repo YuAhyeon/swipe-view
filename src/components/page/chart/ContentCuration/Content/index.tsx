@@ -8,7 +8,7 @@ export default function Content({ id, title, src }: CurationContent) {
       <div className="relative w-[90px] h-[90px] rounded-lg overflow-hidden">
         <Image
           src={src}
-          alt="user profile"
+          alt="콘텐츠 이미지"
           fill
           quality={75}
           priority
