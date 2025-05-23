@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { isMatchDevice, formatDateTime } from '@/utils';
@@ -26,7 +24,7 @@ export default function ChatBannerItem(item: ChatBannerItemProps) {
     >
       <div className="relative w-full h-[210px]">
         <Image
-          src={src}
+          src={src || '/images/mc.jpeg'}
           alt="배너 이미지"
           fill
           quality={75}
