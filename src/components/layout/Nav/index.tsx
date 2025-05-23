@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import { useEffect, useRef } from 'react';
 import { Swiper as SwiperType } from 'swiper';
@@ -36,8 +36,8 @@ export default function Nav({ swiper, activeIndex }: NavProps) {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-[66px] bg-[#FFB2B2] overflow-x-auto scrollbar-hide">
-      <ul className="inline-flex min-w-full h-full justify-center items-center gap-[25px] font-bold text-[1.2rem] whitespace-nowrap px-4">
+    <nav className="fixed top-0 left-0 w-full h-[66px] bg-[#FFB2B2] overflow-x-auto scrollbar-hide z-10">
+      <ul className="inline-flex min-w-full h-full justify-center items-center gap-[5px] font-bold text-[1.2rem] whitespace-nowrap px-4">
         {CATEGORY.map(({ key, label }, index) => (
           <li
             key={key}
@@ -52,7 +52,7 @@ export default function Nav({ swiper, activeIndex }: NavProps) {
               });
               handleNavClick(key);
             }}
-            className={`${pathname === `/${key}` ? 'text-white' : 'text-black'}`}
+            className={`select-none cursor-pointer px-[10px] py-[10px] flex-center ${pathname.includes(`/${key}`) ? 'text-white' : 'text-black'}`}
           >
             {label}
           </li>
