@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Swiper as SwiperType } from 'swiper';
@@ -7,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Nav } from '@/components/layout';
 import { CATEGORY } from '@/helper/constants';
-import { ThemeToggleButton } from '@/components/themes';
+import { Footer } from '@/components/layout';
 
 export default function RootLayout({
   children,
@@ -15,14 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const router = useRouter();
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
     <div className="w-[100dvw] h-[100dvh] pt-[66px]">
-      <ThemeToggleButton />
       <Nav swiper={swiperInstance} activeIndex={activeIndex} />
       <Swiper
+        tabIndex={-1}
         onSwiper={setSwiperInstance}
         onSlideChange={({ activeIndex }) => {
           setActiveIndex(activeIndex);
@@ -35,10 +37,17 @@ export default function RootLayout({
         cssMode={false}
         className="w-full h-full"
       >
-        {CATEGORY.map(({ key }) => (
-          <SwiperSlide key={key}>{children}</SwiperSlide>
+        {CATEGORY.map(({ key }, index) => (
+          <SwiperSlide key={key}>
+            {index === activeIndex ? (
+              <div ref={scrollRef} className="w-full h-full overflow-y-auto">
+                {children}
+              </div>
+            ) : null}
+          </SwiperSlide>
         ))}
       </Swiper>
+      <Footer scrollTarget={scrollRef} />
     </div>
   );
 }
