@@ -10,7 +10,7 @@ export default function ThemeToggleButton() {
 
   return (
     <ThemeButton
-      className="fixed right-10 bottom-10 p-4 z-10 rounded bg-theme-btn"
+      className="fixed left-3 bottom-3 p-4 z-10 rounded bg-theme-btn"
       onClick={() => (resolvedTheme === 'dark' ? setTheme('light') : setTheme('dark'))}
     >
       <Svg width={20} height={20} fill="rgb(166,166,166)" viewBox={[0, 0, 20, 20]}>
