@@ -1,6 +1,6 @@
 export default function EventPage() {
   return (
-    <div>
+    <div className="h-full">
       <p>EventPage</p>
       <p>EventPage</p>
     </div>

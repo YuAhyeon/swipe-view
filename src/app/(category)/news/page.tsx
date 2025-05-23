@@ -1,6 +1,6 @@
 export default function NewsPage() {
   return (
-    <div>
+    <div className="h-full">
       <p>NewsPage</p>
       <p>NewsPage</p>
     </div>
