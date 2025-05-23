@@ -13,7 +13,7 @@ interface BannerProps<T> {
 export default function Banner<T>({ items, delay = 3000, className, children }: BannerProps<T>) {
   return (
     <Swiper
-      // loop
+      loop
       autoplay={{ delay }}
       modules={[Autoplay, Pagination]}
       spaceBetween={10}
@@ -27,7 +27,7 @@ export default function Banner<T>({ items, delay = 3000, className, children }: 
       className={className}
     >
       {items.map((item, index) => (
-        <SwiperSlide key={index} className="!w-[90%] flex-center">
+        <SwiperSlide key={index} className="!w-[90%] h-full flex-center">
           {children(item)}
         </SwiperSlide>
       ))}
