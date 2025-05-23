@@ -1,5 +1,7 @@
 # swipe-view
 
+배포 링크 | https://swipe-view.vercel.app/chart
+
 카테고리 간 이동이 가능한 swipe view입니다.
 <br />
 멀티 디바이스 지원을 위해 특정 규격으로 고정하지 않은 반응형 페이지입니다.
