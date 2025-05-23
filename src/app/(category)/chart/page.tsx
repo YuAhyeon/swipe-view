@@ -15,7 +15,7 @@ export default function ChartPage() {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-full min-h-[360px] bg-white overflow-visible">
-        <Banner items={items} className="w-full h-full bg-banner-bg ">
+        <Banner items={items} delay={2000} className="w-full h-full bg-banner-bg ">
           {(item) => <ChartBannerItem {...item} />}
         </Banner>
       </div>
