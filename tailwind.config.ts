@@ -21,6 +21,22 @@ const config: Config = {
           btn: 'var(--theme-btn)',
         },
         bullet: 'var(--bullet)',
+        inverse: 'var(--inverse)',
+        footer: {
+          bg: 'var(--footer-bg)',
+        },
+        banner: {
+          text: 'var(--banner-bg)',
+        },
+        heading: {
+          text: 'var(--heading-text)',
+        },
+        body: {
+          text: 'var(--body-text)',
+        },
+      },
+      boxShadow: {
+        too: '1px 2px 4px 0px rgba(0, 0, 0, 0.25)',
       },
     },
   },
