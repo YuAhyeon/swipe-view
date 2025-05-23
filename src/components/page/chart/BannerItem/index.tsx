@@ -17,7 +17,7 @@ export default function ChatBannerItem(item: ChatBannerItemProps) {
 
   const { isMobile } = isMatchDevice();
   const { id, title, src, startAt, endAt } = item;
-  const MAX_TITLE_LENGTH = isMobile ? 27 : 50;
+  const MAX_TITLE_LENGTH = isMobile ? 24 : 50;
 
   return (
     <Link

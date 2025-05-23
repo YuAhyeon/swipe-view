@@ -3,7 +3,7 @@ type Params = {
 };
 
 export default async function ContentDetail({ params }: { params: Params }) {
-  const id = (await params).id;
+  const { id } = await params;
 
   return (
     <div className="w-full h-full p-[20px]">
